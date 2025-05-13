@@ -50,9 +50,12 @@ export default function Basket() {
               <button className={'border-2 border-solid border-green-400 rounded-lg overflow-hidden p-2 text-xl font-bold duration-200 hover:opacity-60 cursor-pointer greenShadow ' + fugaz.className} onClick={() => setShowName(true)}>Reveal Player</button>
           )}
           {showName && (
-              <p className='text-xl rounded-lg	bg-[rgba(134,239,172,0.30)] p-4'>
-                Player Name: <span className='font-bold'>{player.name}</span>
-              </p>
+
+              <button className='border-2 border-solid border-green-400 rounded-lg overflow-hidden p-2 duration-200 hover:opacity-60 cursor-pointer greenShadow ' onClick={() => setShowName(false)}><p className='text-xl font-semibold '>Press to Hide</p>
+                <p className='text-xl rounded-lg	bg-[rgba(134,239,172,0.30)] p-4'>
+                  Player Name: <span className='font-bold'>{player.name}</span>
+                </p>
+              </button>
             )}
           <div className='flex gap-4 align-center justify-center'>
             <button className={'border-2 border-solid border-green-400 rounded-lg overflow-hidden p-2 text-xl font-bold duration-200 hover:opacity-60 cursor-pointer greenShadow ' + fugaz.className} onClick={handleNextPlayer}>Next Player</button>
