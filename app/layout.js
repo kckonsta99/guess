@@ -1,5 +1,6 @@
 import { Fugaz_One, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from 'next/link';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,13 +23,17 @@ export default function RootLayout({ children }) {
 
   const header = (
     <header className="p-4 sm:p-8 flex items-center justify-betwwen gap-4">
-      <h1 className={'text-lg sm:text-xl md:text-2xl ' + fugaz.className}><a href="/"><span className="text-green-400 border">Guess</span> <span className="text-amber-600 border">Game</span></a></h1>
+      <Link href="/" >
+        <h1 className={'text-lg sm:text-xl md:text-2xl ' + fugaz.className}><span className="text-green-400 border">Guess</span> <span className="text-amber-600 border">Game</span></h1>
+      </Link>
     </header>
   )
 
   const footer = (
     <footer className="p-4 sm:p-8 grid place-items-center">
-      <p>Created by <a className={fugaz.className} href="https://github.com/kckonsta99" target="_blank" >kckonsta99</a></p>
+      <Link href="https://github.com/kckonsta99" target="_blank" >
+        <p>Created by <span className={fugaz.className} >kckonsta99</span></p>
+      </Link>
     </footer>
   )
 
