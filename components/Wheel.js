@@ -2,16 +2,15 @@
 import { useState, useRef } from 'react';
 
 const Wheel = () => {
-  const wheelRef = useRef(null); // Αναφορά για το στοιχείο τροχού
-  const [rotation, setRotation] = useState(0); // Αποθήκευση της περιστροφής
+  const wheelRef = useRef(null);
+  const [rotation, setRotation] = useState(0);
 
   const spinWheel = () => {
-    const randomDeg = Math.floor(Math.random() * 360) + 1800; // Τουλάχιστον 5 γύροι
+    const randomDeg = Math.floor(Math.random() * 360) + 1800;
     const newRotation = rotation + randomDeg;
 
     setRotation(newRotation);
 
-    // Χρησιμοποιούμε την αναφορά του τροχού για να εφαρμόσουμε την περιστροφή
     if (wheelRef.current) {
       wheelRef.current.style.transition = "transform 4s cubic-bezier(0.33, 1, 0.68, 1)";
       wheelRef.current.style.transform = `rotate(${newRotation}deg)`;
